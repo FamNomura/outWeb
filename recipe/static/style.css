@@ -1,0 +1,112 @@
+/* ベーススタイル（スマホ最優先） */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.7;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 12px;
+    background-color: #f7f9fc;
+    overflow-x: hidden;
+}
+
+header {
+    border-bottom: 2px solid #0056b3;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+}
+
+h1 { font-size: 1.4rem; color: #0056b3; margin-top: 10px; }
+h2 { font-size: 1.25rem; color: #0056b3; border-left: 4px solid #0056b3; padding-left: 8px; }
+h3 { font-size: 1.1rem; color: #444; }
+
+a { color: #0056b3; text-decoration: none; }
+.back-btn { display: inline-block; padding: 6px 12px; background: #e6f0fa; border-radius: 4px; font-size: 0.9rem; }
+
+.content {
+    background: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    margin-bottom: 60px; /* 読書用ナビゲーション等のはみ出し回避用 */
+}
+
+img { max-width: 100%; height: auto; border-radius: 6px; display: block; margin: 10px 0; }
+
+/* ① レシピテンプレート用スタイル */
+.tmpl-recipe { padding: 0; background: #fffbf5; }
+.recipe-hero {
+    position: relative; height: 180px; background-size: cover; background-position: center;
+    display: flex; flex-direction: column; justify-content: space-between; padding: 15px;
+}
+.back-btn-white { color: #fff; background: rgba(0,0,0,0.4); padding: 5px 10px; border-radius: 4px; font-size: 0.85rem; width: fit-content; }
+.recipe-hero-title { color: #fff; font-size: 1.5rem; text-shadow: 0 2px 4px rgba(0,0,0,0.8); margin: 0; }
+
+.recipe-controls { background: #fff; padding: 12px; border-radius: 6px; border: 1px solid #f0d3b7; margin-bottom: 15px; }
+.serving-selector { display: flex; align-items: center; gap: 6px; margin-bottom: 10px; font-size: 0.9rem; }
+.serving-selector button { flex: 1; padding: 8px; border: 1px solid #ddd; background: #fff; border-radius: 4px; cursor: pointer; }
+.serving-selector button.active { background: #ff9800; color: #fff; border-color: #ff9800; font-weight: bold; }
+.utility-buttons { display: flex; gap: 8px; }
+.utility-buttons button { flex: 1; padding: 10px; font-size: 0.85rem; border-radius: 4px; border: none; background: #e0e0e0; cursor: pointer; }
+#btn-copy { background: #4caf50; color: #fff; font-weight: bold; }
+#btn-wakelock.wakelock-on { background: #2196f3; color: #fff; }
+
+/* レシピ手順（小さな作業工程画像とテキストの横並び） */
+.recipe-step-item {
+    position: relative; padding: 12px; border-bottom: 1px dashed #ddd; cursor: pointer; transition: background 0.2s;
+}
+.recipe-step-item.has-step-img { display: flex; gap: 12px; align-items: flex-start; }
+.recipe-step-item img { width: 80px; height: 80px; object-fit: cover; margin: 0; flex-shrink: 0; border-radius: 4px; }
+.recipe-step-text { flex: 1; min-width: 0; line-height: 1.6; }
+.step-completed { background: #e8f5e9; color: #888; text-decoration: line-through; }
+
+/* ② 読書テンプレート用スタイル */
+.tmpl-book { background: #f4ece1; color: #2b2b2b; }
+.book-content { font-size: 1.05rem; line-height: 1.8; letter-spacing: 0.05em; background: #fbf7f2; }
+.book-nav-bar {
+    position: fixed; bottom: 0; left: 0; width: 100%; height: 55px; background: #fff;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1); display: flex; z-index: 1000;
+}
+.book-nav-bar .nav-btn {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    color: #444; font-weight: bold; font-size: 0.95rem; border-right: 1px solid #eee;
+}
+.book-nav-bar .center-btn { background: #f0f0f0; }
+.book-nav-bar .nav-btn.disabled { color: #ccc; background: #fafafa; }
+
+/* ③ タイムライン用スタイル */
+.timeline-container ul { position: relative; padding-left: 20px; list-style: none; }
+.timeline-container ul::before {
+    content: ''; position: absolute; left: 5px; top: 10px; bottom: 10px; width: 2px; background: #0056b3;
+}
+.timeline-container ul li { position: relative; margin-bottom: 20px; padding-left: 15px; }
+.timeline-container ul li::before {
+    content: ''; position: absolute; left: -18px; top: 6px; width: 8px; height: 8px;
+    background: #fff; border: 2px solid #0056b3; border-radius: 50%;
+}
+
+/* ④ FAQテンプレート用スタイル */
+.faq-item { border-bottom: 1px solid #e0e0e0; margin-bottom: 5px; }
+.faq-item h3 {
+    margin: 0; padding: 14px; background: #fff; color: #0056b3; cursor: pointer;
+    position: relative; padding-right: 35px; font-size: 1rem;
+}
+.faq-item h3::after {
+    content: '▼'; position: absolute; right: 15px; top: 50%; transform: translateY(-50%); font-size: 0.8rem; color: #888;
+}
+.faq-item h3.active::after { content: '▲'; color: #0056b3; }
+.faq-answer { display: none; padding: 14px; background: #f9fbfd; margin: 0; border-top: 1px solid #f0f0f0; font-size: 0.95rem; }
+
+/* 検索・テーブル・PC表示最適化（既存機能の継承・最適化） */
+#search-box { width: 100%; padding: 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+table { width: 100%; border-collapse: collapse; display: block; overflow-x: auto; white-space: nowrap; }
+th, td { border: 1px solid #ddd; padding: 8px; }
+
+/* PC・タブレット向け（最低限の見た目担保） */
+@media (min-width: 768px) {
+    body { padding: 20px; }
+    .content { padding: 30px; }
+    .recipe-hero { height: 300px; }
+    .recipe-hero-title { font-size: 2.2rem; }
+    .recipe-step-item img { width: 120px; height: 120px; }
+}

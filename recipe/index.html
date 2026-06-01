@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>レシピ一覧</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="tmpl-list">
+    <header>
+        <h1>レシピ一覧</h1>
+        <div style="margin-top: 15px; margin-bottom: 10px;">
+            <input type="text" id="search-box" placeholder="キーワードでレシピを検索..." oninput="filterRecipes()">
+        </div>
+    </header>
+    <main class="content">
+        <ul id="recipe-list" style="list-style: none; padding: 0; margin: 0;">
+            
+            <li class="recipe-item" style="padding: 12px; border-bottom: 1px solid #eee;">
+                <a href="やけくそパエリア/index.html" style="font-size: 1.1rem; font-weight: bold; display: block;">やけくそパエリア</a>
+            </li>
+            
+            <li class="recipe-item" style="padding: 12px; border-bottom: 1px solid #eee;">
+                <a href="トマたまカレーうどん/index.html" style="font-size: 1.1rem; font-weight: bold; display: block;">トマたまカレーうどん</a>
+            </li>
+            
+            <li class="recipe-item" style="padding: 12px; border-bottom: 1px solid #eee;">
+                <a href="ネギージョ/index.html" style="font-size: 1.1rem; font-weight: bold; display: block;">ネギージョ</a>
+            </li>
+            
+            <li class="recipe-item" style="padding: 12px; border-bottom: 1px solid #eee;">
+                <a href="ホロホロチキンのトマト煮込み/index.html" style="font-size: 1.1rem; font-weight: bold; display: block;">ホロホロチキンのトマト煮込み</a>
+            </li>
+            
+            <li class="recipe-item" style="padding: 12px; border-bottom: 1px solid #eee;">
+                <a href="マスカルポーネおかか/index.html" style="font-size: 1.1rem; font-weight: bold; display: block;">マスカルポーネおかか</a>
+            </li>
+            
+            <li class="recipe-item" style="padding: 12px; border-bottom: 1px solid #eee;">
+                <a href="リュウジ流昆布水まぜそば/index.html" style="font-size: 1.1rem; font-weight: bold; display: block;">リュウジ流昆布水まぜそば</a>
+            </li>
+            
+            <li class="recipe-item" style="padding: 12px; border-bottom: 1px solid #eee;">
+                <a href="ワンパン日本酒鶏そば/index.html" style="font-size: 1.1rem; font-weight: bold; display: block;">ワンパン日本酒鶏そば</a>
+            </li>
+            
+            <li class="recipe-item" style="padding: 12px; border-bottom: 1px solid #eee;">
+                <a href="別茹でペペロンチーノ/index.html" style="font-size: 1.1rem; font-weight: bold; display: block;">別茹でペペロンチーノ</a>
+            </li>
+            
+            <li class="recipe-item" style="padding: 12px; border-bottom: 1px solid #eee;">
+                <a href="生ハムトマトの冷製パスタ/index.html" style="font-size: 1.1rem; font-weight: bold; display: block;">生ハムトマトの冷製パスタ</a>
+            </li>
+            
+            <li class="recipe-item" style="padding: 12px; border-bottom: 1px solid #eee;">
+                <a href="究極の水炊き/index.html" style="font-size: 1.1rem; font-weight: bold; display: block;">究極の水炊き</a>
+            </li>
+            
+            <li class="recipe-item" style="padding: 12px; border-bottom: 1px solid #eee;">
+                <a href="自作ポン酢/index.html" style="font-size: 1.1rem; font-weight: bold; display: block;">自作ポン酢</a>
+            </li>
+            
+            <li class="recipe-item" style="padding: 12px; border-bottom: 1px solid #eee;">
+                <a href="至高のユッケジャン鍋/index.html" style="font-size: 1.1rem; font-weight: bold; display: block;">至高のユッケジャン鍋</a>
+            </li>
+            
+            <li class="recipe-item" style="padding: 12px; border-bottom: 1px solid #eee;">
+                <a href="超痩せ粥/index.html" style="font-size: 1.1rem; font-weight: bold; display: block;">超痩せ粥</a>
+            </li>
+            
+        </ul>
+    </main>
+
+    <script>
+        function filterRecipes() {
+            const query = document.getElementById('search-box').value.toLowerCase();
+            const items = document.querySelectorAll('.recipe-item');
+            items.forEach(item => {
+                const title = item.querySelector('a').innerText.toLowerCase();
+                if (title.includes(query)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

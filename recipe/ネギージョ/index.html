@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ネギージョ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="tmpl-recipe">
+    
+    <div class="recipe-hero" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('img/negijo_main.jpg');">
+        <nav><a href="../index.html" class="back-btn-white">← 一覧へ戻る</a></nav>
+        <h1 class="recipe-hero-title">ネギージョ</h1>
+    </div>
+    
+
+    <main class="content">
+        <div class="recipe-controls">
+            <div class="serving-container" style="display: flex; flex-direction: column; gap: 10px;">
+                <div class="serving-selector-header" style="display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;">
+                    <span style="font-weight: bold; color: #ff9800; font-size: 0.95rem;">👨‍🍳 分量を変更する:</span>
+                    <div style="display: flex; align-items: center; gap: 5px;">
+                        <input type="number" id="serving-input" value="1" min="0.1" max="10" step="0.1" oninput="updateServingsFromInput(this.value)" style="width: 65px; padding: 5px; border: 1px solid #ff9800; border-radius: 4px; text-align: center; font-weight: bold; font-size: 1rem; color: #ff9800; background: #fffbf5;">
+                        <span style="font-weight: bold; color: #ff9800;">倍</span>
+                    </div>
+                </div>
+                
+                <div class="slider-wrapper" style="display: flex; align-items: center; gap: 12px; margin: 4px 0;">
+                    <span style="font-size: 0.8rem; color: #888; font-weight: bold;">0.5倍</span>
+                    <input type="range" id="serving-slider" min="0.5" max="3.0" step="0.1" value="1.0" oninput="updateServingsFromSlider(this.value)" style="flex: 1; height: 6px; cursor: pointer; accent-color: #ff9800; border-radius: 3px; background: #e0e0e0; outline: none;">
+                    <span style="font-size: 0.8rem; color: #888; font-weight: bold;">3.0倍</span>
+                </div>
+
+                <div class="serving-selector" style="display: flex; gap: 6px;">
+                    <button onclick="changeServings(0.5)" id="btn-serving-0.5" style="flex: 1; padding: 6px; font-size: 0.85rem; border-radius: 4px; border: 1px solid #ddd; background: #fff; cursor: pointer;">0.5倍</button>
+                    <button onclick="changeServings(1)" class="active" id="btn-serving-1" style="flex: 1; padding: 6px; font-size: 0.85rem; border-radius: 4px; border: 1px solid #ddd; background: #fff; cursor: pointer;">1倍</button>
+                    <button onclick="changeServings(2)" id="btn-serving-2" style="flex: 1; padding: 6px; font-size: 0.85rem; border-radius: 4px; border: 1px solid #ddd; background: #fff; cursor: pointer;">2倍</button>
+                    <button onclick="changeServings(3)" id="btn-serving-3" style="flex: 1; padding: 6px; font-size: 0.85rem; border-radius: 4px; border: 1px solid #ddd; background: #fff; cursor: pointer;">3倍</button>
+                </div>
+            </div>
+            <div class="utility-buttons" style="margin-top: 12px; display: flex; gap: 8px;">
+                <button id="btn-wakelock" onclick="toggleWakeLock()" style="flex: 1; padding: 10px; font-size: 0.85rem; border-radius: 4px; border: none; background: #e0e0e0; cursor: pointer;">📱 画面常時点灯: OFF</button>
+                <button id="btn-copy" onclick="copyRecipeText()" style="flex: 1; padding: 10px; font-size: 0.85rem; border-radius: 4px; border: none; background: #4caf50; color: #fff; font-weight: bold; cursor: pointer;">📋 LINE用にコピー</button>
+            </div>
+        </div>
+
+        <div id="recipe-body">
+            <h1>ネギージョ</h1>
+<p>トロトロに甘くなった長ネギと、ジューシーな鶏もも肉をにんにくオイルでじっくり煮込んだ、和風テイストの絶品アヒージョ（ネギージョ）です。</p>
+<h3>材料（[2]人分）</h3>
+<ul>
+<li>長ネギ: [2]本（[240]〜[300]g）</li>
+<li>鶏もも肉: [160]g</li>
+<li>塩（鶏肉下味用）: [1]つまみ</li>
+<li>にんにく: [20]〜[25]g</li>
+<li>鷹の爪: [2]〜[3]本</li>
+<li>エクストラバージンオリーブオイル: [適量]（鍋底[1]cmの量）</li>
+<li>こんぶだし: 小さじ[1]</li>
+<li>塩: [1]つまみ</li>
+</ul>
+<h4>＝シメ＝</h4>
+<ul>
+<li>ご飯: [2]人分</li>
+<li>卵: [2]個</li>
+<li>塩: [2]つまみ</li>
+<li>黒胡椒: [適量]</li>
+</ul>
+<h3>作り方</h3>
+<ol>
+<li><img alt="にんにくを熱する" src="img/negijo/step1.jpg"/> スキレット（または小さめの鍋）に、にんにく[20]〜[25]g（スライス）、種を抜いた鷹の爪[2]〜[3]本を入れ、鍋底から[1]cmほどの高さまでオリーブオイルを注いで弱火で熱します。</li>
+<li><img alt="鶏肉を加える" src="img/negijo/step2.jpg"/> 塩[1]つまみで下味をつけた一口大の鶏もも肉[160]gを加え、オイルの中でじっくりと火が通るまで炒め煮にします。</li>
+<li><img alt="ネギと出汁を加える" src="img/negijo/step3.jpg"/> 3cm幅に切った長ネギ[2]本、こんぶだし小さじ[1]、塩[1]つまみを加え、ネギがトロトロになるまでじっくりと加熱します。</li>
+<li><img alt="食べる" src="img/negijo/step4.jpg"/> ネギと鶏もも肉ににんにくオイルの旨味がしっかりと染み込んだら完成です。オイルをバゲットなどにつけて食べるのもおすすめです。</li>
+<li><img alt="シメの雑炊" src="img/negijo/step5.jpg"/> 残ったオイルの鍋にご飯[2]人分を加えてほぐし、溶き卵[2]個、塩[2]つまみを回し入れて混ぜ合わせ、仕上げに黒胡椒[適量]を振って旨味リゾットとしていただきます。</li>
+</ol>
+        </div>
+    </main>
+
+    <script src="../static/recipe.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>やけくそパエリア</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="tmpl-recipe">
+    
+    <div class="recipe-hero" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('img/yakekuso_paella_main.jpg');">
+        <nav><a href="../index.html" class="back-btn-white">← 一覧へ戻る</a></nav>
+        <h1 class="recipe-hero-title">やけくそパエリア</h1>
+    </div>
+    
+
+    <main class="content">
+        <div class="recipe-controls">
+            <div class="serving-container" style="display: flex; flex-direction: column; gap: 10px;">
+                <div class="serving-selector-header" style="display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;">
+                    <span style="font-weight: bold; color: #ff9800; font-size: 0.95rem;">👨‍🍳 分量を変更する:</span>
+                    <div style="display: flex; align-items: center; gap: 5px;">
+                        <input type="number" id="serving-input" value="1" min="0.1" max="10" step="0.1" oninput="updateServingsFromInput(this.value)" style="width: 65px; padding: 5px; border: 1px solid #ff9800; border-radius: 4px; text-align: center; font-weight: bold; font-size: 1rem; color: #ff9800; background: #fffbf5;">
+                        <span style="font-weight: bold; color: #ff9800;">倍</span>
+                    </div>
+                </div>
+                
+                <div class="slider-wrapper" style="display: flex; align-items: center; gap: 12px; margin: 4px 0;">
+                    <span style="font-size: 0.8rem; color: #888; font-weight: bold;">0.5倍</span>
+                    <input type="range" id="serving-slider" min="0.5" max="3.0" step="0.1" value="1.0" oninput="updateServingsFromSlider(this.value)" style="flex: 1; height: 6px; cursor: pointer; accent-color: #ff9800; border-radius: 3px; background: #e0e0e0; outline: none;">
+                    <span style="font-size: 0.8rem; color: #888; font-weight: bold;">3.0倍</span>
+                </div>
+
+                <div class="serving-selector" style="display: flex; gap: 6px;">
+                    <button onclick="changeServings(0.5)" id="btn-serving-0.5" style="flex: 1; padding: 6px; font-size: 0.85rem; border-radius: 4px; border: 1px solid #ddd; background: #fff; cursor: pointer;">0.5倍</button>
+                    <button onclick="changeServings(1)" class="active" id="btn-serving-1" style="flex: 1; padding: 6px; font-size: 0.85rem; border-radius: 4px; border: 1px solid #ddd; background: #fff; cursor: pointer;">1倍</button>
+                    <button onclick="changeServings(2)" id="btn-serving-2" style="flex: 1; padding: 6px; font-size: 0.85rem; border-radius: 4px; border: 1px solid #ddd; background: #fff; cursor: pointer;">2倍</button>
+                    <button onclick="changeServings(3)" id="btn-serving-3" style="flex: 1; padding: 6px; font-size: 0.85rem; border-radius: 4px; border: 1px solid #ddd; background: #fff; cursor: pointer;">3倍</button>
+                </div>
+            </div>
+            <div class="utility-buttons" style="margin-top: 12px; display: flex; gap: 8px;">
+                <button id="btn-wakelock" onclick="toggleWakeLock()" style="flex: 1; padding: 10px; font-size: 0.85rem; border-radius: 4px; border: none; background: #e0e0e0; cursor: pointer;">📱 画面常時点灯: OFF</button>
+                <button id="btn-copy" onclick="copyRecipeText()" style="flex: 1; padding: 10px; font-size: 0.85rem; border-radius: 4px; border: none; background: #4caf50; color: #fff; font-weight: bold; cursor: pointer;">📋 LINE用にコピー</button>
+            </div>
+        </div>
+
+        <div id="recipe-body">
+            <h1>やけくそパエリア</h1>
+<p>本格的なサフランや魚介類は一切使わず、鶏もも肉とにんにく、鶏がらスープの素で豪快に炊き上げる、やけくそ気味だけど極上に美味いフライパンパエリアです。</p>
+<h3>材料（[2]人分）</h3>
+<ul>
+<li>生米: [1.5]合（[225]g）</li>
+<li>鶏もも肉: [1]枚（[350]g）</li>
+<li>にんにく: [30]g（[6]片）</li>
+<li>玉ねぎ: [1/2]個（[120]g）</li>
+<li>鶏がらスープの素: 小さじ[2]</li>
+<li>塩（鶏肉下味用）: [2]つまみ</li>
+<li>オリーブオイル（エクストラバージン）: 大さじ[2]</li>
+<li>水: [480]cc</li>
+<li>塩: [2]つまみ</li>
+<li>黒胡椒: [適量]</li>
+<li>味変用ポン酢: [適量]</li>
+</ul>
+<h3>作り方</h3>
+<ol>
+<li><img alt="鶏肉を焼く" src="img/yakekuso_paella/step1.jpg"/> フライパンにオリーブオイル大さじ[2]を熱し、塩[2]つまみで下味をつけた一口大の鶏もも肉[350]gを入れ、皮目からこんがりと焼き色がつくまで焼きます。</li>
+<li><img alt="香味野菜を炒める" src="img/yakekuso_paella/step2.jpg"/> みじん切りにしたにんにく[30]gと、玉ねぎ[120]gを加え、全体にしんなりするまでよく炒め合わせます。</li>
+<li><img alt="米を炒める" src="img/yakekuso_paella/step3.jpg"/> 洗っていない生米[1.5]合（[225]g）をそのままフライパンに加え、米がオイルを吸って透明感が出るまでしっかりと炒めます。</li>
+<li><img alt="炊き上げる" src="img/yakekuso_paella/step4.jpg"/> 水[480]cc、塩[2]つまみ、鶏がらスープの素小さじ[2]を加えて軽く混ぜて沸騰させ、フタをして弱火で[16]分間炊き上げます。</li>
+<li><img alt="仕上げ" src="img/yakekuso_paella/step5.jpg"/> フタを取り、強火で数分間加熱して底に美味しそうなおこげを作ります。仕上げに黒胡椒[適量]を振って完成です。お好みでポン酢[適量]を回しかけてさっぱりといただきます。</li>
+</ol>
+        </div>
+    </main>
+
+    <script src="../static/recipe.js"></script>
+</body>
+</html>

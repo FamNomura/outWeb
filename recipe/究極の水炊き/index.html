@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>究極の水炊き</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="tmpl-recipe">
+    
+    <div class="recipe-hero" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('img/mizutaki_main.jpg');">
+        <nav><a href="../index.html" class="back-btn-white">← 一覧へ戻る</a></nav>
+        <h1 class="recipe-hero-title">究極の水炊き</h1>
+    </div>
+    
+
+    <main class="content">
+        <div class="recipe-controls">
+            <div class="serving-container" style="display: flex; flex-direction: column; gap: 10px;">
+                <div class="serving-selector-header" style="display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;">
+                    <span style="font-weight: bold; color: #ff9800; font-size: 0.95rem;">👨‍🍳 分量を変更する:</span>
+                    <div style="display: flex; align-items: center; gap: 5px;">
+                        <input type="number" id="serving-input" value="1" min="0.1" max="10" step="0.1" oninput="updateServingsFromInput(this.value)" style="width: 65px; padding: 5px; border: 1px solid #ff9800; border-radius: 4px; text-align: center; font-weight: bold; font-size: 1rem; color: #ff9800; background: #fffbf5;">
+                        <span style="font-weight: bold; color: #ff9800;">倍</span>
+                    </div>
+                </div>
+                
+                <div class="slider-wrapper" style="display: flex; align-items: center; gap: 12px; margin: 4px 0;">
+                    <span style="font-size: 0.8rem; color: #888; font-weight: bold;">0.5倍</span>
+                    <input type="range" id="serving-slider" min="0.5" max="3.0" step="0.1" value="1.0" oninput="updateServingsFromSlider(this.value)" style="flex: 1; height: 6px; cursor: pointer; accent-color: #ff9800; border-radius: 3px; background: #e0e0e0; outline: none;">
+                    <span style="font-size: 0.8rem; color: #888; font-weight: bold;">3.0倍</span>
+                </div>
+
+                <div class="serving-selector" style="display: flex; gap: 6px;">
+                    <button onclick="changeServings(0.5)" id="btn-serving-0.5" style="flex: 1; padding: 6px; font-size: 0.85rem; border-radius: 4px; border: 1px solid #ddd; background: #fff; cursor: pointer;">0.5倍</button>
+                    <button onclick="changeServings(1)" class="active" id="btn-serving-1" style="flex: 1; padding: 6px; font-size: 0.85rem; border-radius: 4px; border: 1px solid #ddd; background: #fff; cursor: pointer;">1倍</button>
+                    <button onclick="changeServings(2)" id="btn-serving-2" style="flex: 1; padding: 6px; font-size: 0.85rem; border-radius: 4px; border: 1px solid #ddd; background: #fff; cursor: pointer;">2倍</button>
+                    <button onclick="changeServings(3)" id="btn-serving-3" style="flex: 1; padding: 6px; font-size: 0.85rem; border-radius: 4px; border: 1px solid #ddd; background: #fff; cursor: pointer;">3倍</button>
+                </div>
+            </div>
+            <div class="utility-buttons" style="margin-top: 12px; display: flex; gap: 8px;">
+                <button id="btn-wakelock" onclick="toggleWakeLock()" style="flex: 1; padding: 10px; font-size: 0.85rem; border-radius: 4px; border: none; background: #e0e0e0; cursor: pointer;">📱 画面常時点灯: OFF</button>
+                <button id="btn-copy" onclick="copyRecipeText()" style="flex: 1; padding: 10px; font-size: 0.85rem; border-radius: 4px; border: none; background: #4caf50; color: #fff; font-weight: bold; cursor: pointer;">📋 LINE用にコピー</button>
+            </div>
+        </div>
+
+        <div id="recipe-body">
+            <h1>究極の水炊き</h1>
+<p>鶏もも肉と手羽元をじっくり1時間煮込むことで、骨から極上の旨味が溶け出した極上白濁スープが完成します。素材の味を最大限に引き出した究極の水炊きです。</p>
+<h3>材料（[2]人分）</h3>
+<ul>
+<li>鶏もも肉: [175]g</li>
+<li>手羽元（手羽先でも可）: [150]〜[200]g</li>
+<li>鶏もも肉ミンチ: [150]g</li>
+<li>塩（鶏ももミンチ下味用）: [1.5]つまみ</li>
+<li>キャベツ: [125]g</li>
+<li>にんにく: [5]g</li>
+<li>生姜: [5]g</li>
+<li>水: [500]cc</li>
+<li>酒: [25]cc</li>
+<li>塩: 小さじ[0.5]</li>
+<li>味の素: [2]振り</li>
+</ul>
+<h4>＝タレ＝</h4>
+<ul>
+<li>醤油: 大さじ[1.5]</li>
+<li>ぽん酢: 大さじ[1.5]</li>
+<li>水: 大さじ[0.5]</li>
+<li>味の素: [2.5]振り</li>
+</ul>
+<h4>＝シメ＝</h4>
+<ul>
+<li>マルタイ棒らーめん: [60]g</li>
+<li>塩: [1.5]つまみ</li>
+<li>黒胡椒: [適量]</li>
+<li>柚子胡椒（お好みで）: [適量]</li>
+</ul>
+<h3>作り方</h3>
+<ol>
+<li><img alt="煮込む" src="img/mizutaki/step1.jpg"/> 鍋に鶏もも肉[175]g、手羽元[200]g、水[500]cc、酒[25]cc、塩小さじ[0.5]、味の素[2]振り、にんにく[5]g、生姜[5]gを入れて沸騰させ、アクを取ったらフタをして弱火で[1]時間じっくり煮込みます。</li>
+<li><img alt="団子とタレを作る" src="img/mizutaki/step2.jpg"/> 煮込んでいる間に、鶏もも肉ミンチ[150]gに塩[1.5]つまみを加えてよく混ぜ合わせ、鶏団子のタネを作ります。また、醤油大さじ[1.5]、ぽん酢大さじ[1.5]、水大さじ[0.5]、味の素[2.5]振りを混ぜ合わせて特製酢醤油を作ります。</li>
+<li><img alt="鶏団子と野菜を加える" src="img/mizutaki/step3.jpg"/> [1]時間煮込んだ鍋に、鶏団子を丸めて入れます。さらにキャベツ[125]gを加え、火が通るまで煮込みます。</li>
+<li><img alt="食べる" src="img/mizutaki/step4.jpg"/> まずはそのまま極上のスープと塩[適量]で鶏肉の旨味を味わい、次にお好みで特製酢醤油や柚子胡椒[適量]をつけて具材をいただきます。</li>
+<li><img alt="シメのラーメン" src="img/mizutaki/step5.jpg"/> シメは残ったスープにマルタイ棒らーめん[60]gを加え、塩[1.5]つまみと黒胡椒[適量]で味を調えて茹で上げます。</li>
+</ol>
+        </div>
+    </main>
+
+    <script src="../static/recipe.js"></script>
+</body>
+</html>
